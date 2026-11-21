@@ -16,10 +16,16 @@ sys.path.insert(0, str(ROOT))
 from common.semantic_layer import SemanticModel  # noqa: E402
 
 failures = 0
+n_checks = 0
+# Participant copies have no answer keys: print neutral labels so the output doesn't reveal planted findings.
+FACILITATOR = (ROOT / "facilitator" / "answer-keys").exists()
 
 
 def check(label: str, cond: bool, detail: str = "") -> None:
-    global failures
+    global failures, n_checks
+    n_checks += 1
+    if not FACILITATOR and "knowledge documents" not in label:
+        label, detail = f"semantic layer check {n_checks}", ""
     print(("  PASS " if cond else "  FAIL ") + label + (f"  ({detail})" if detail else ""))
     failures += 0 if cond else 1
 
