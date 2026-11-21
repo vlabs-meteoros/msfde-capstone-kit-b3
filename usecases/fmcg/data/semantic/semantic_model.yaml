@@ -1,0 +1,79 @@
+# Semantic model for the FMCG Demand & Trade agent (stand-in for Fabric IQ).
+name: fmcg_demand_trade
+description: >
+  Weekly sell-in (shipments to customers), sell-out (customer sales to shoppers incl. closing stock),
+  promotions and demand forecasts for Verdant Consumer Brands, India. Currency INR, quantities in cases.
+  Fiscal year runs April-March. Actuals through week starting 2026-11-09.
+notes:
+  - "Use dimension ytd_comparable = Y with fiscal_year to compare year-to-date periods like-for-like."
+  - "Growth rebate tiers, promo depth caps and ROI thresholds live in the trade-terms and policy documents."
+  - "Promotion uplift compares actual weekly cases during the promo with the 4 non-promo weeks before it."
+
+tables:
+  calendar:    {file: calendar.csv, primary_key: week_start, description: "Weekly fiscal calendar."}
+  products:    {file: products.csv, primary_key: sku, description: "SKU master with list price and COGS per case."}
+  accounts:    {file: accounts.csv, primary_key: account_id, description: "Customers (retail accounts and distributors)."}
+  sell_in:     {file: sell_in.csv, description: "Weekly shipments to accounts with gross/net sales.", lookup: false}
+  sell_out:    {file: sell_out.csv, description: "Weekly account sell-out to shoppers and closing stock.", lookup: false}
+  promotions:  {file: promotions.csv, primary_key: promo_id, description: "Completed and planned promotions with baseline/actuals and spend."}
+  forecast:    {file: forecast.csv, description: "Weekly demand forecast (last 12 actual weeks + next 8 weeks).", lookup: false}
+
+relationships:
+  - {from: sell_in, to: calendar, on: "sell_in.week_start = calendar.week_start"}
+  - {from: sell_in, to: products, on: "sell_in.sku = products.sku"}
+  - {from: sell_in, to: accounts, on: "sell_in.account_id = accounts.account_id"}
+  - {from: sell_out, to: calendar, on: "sell_out.week_start = calendar.week_start"}
+  - {from: sell_out, to: products, on: "sell_out.sku = products.sku"}
+  - {from: sell_out, to: accounts, on: "sell_out.account_id = accounts.account_id"}
+  - {from: forecast, to: calendar, on: "forecast.week_start = calendar.week_start"}
+  - {from: forecast, to: products, on: "forecast.sku = products.sku"}
+  - {from: forecast, to: accounts, on: "forecast.account_id = accounts.account_id"}
+  - {from: promotions, to: products, on: "promotions.sku = products.sku"}
+  - {from: promotions, to: accounts, on: "promotions.account_id = accounts.account_id"}
+
+dimensions:
+  week_start:     {table: calendar, expr: calendar.week_start, description: "Monday of the week."}
+  month:          {table: calendar, expr: calendar.month, description: "Calendar month YYYY-MM."}
+  fiscal_year:    {table: calendar, expr: calendar.fiscal_year, description: "Fiscal year (April-March).", examples: ["FY2025-26", "FY2026-27"]}
+  fiscal_quarter: {table: calendar, expr: calendar.fiscal_quarter, description: "Fiscal quarter, e.g. FY2026-27 Q2."}
+  season:         {table: calendar, expr: calendar.season, description: "Summer, Monsoon, Festive/Winter."}
+  ytd_comparable: {table: calendar, expr: calendar.ytd_comparable, description: "Y if the fiscal week is <= the latest actual fiscal week (like-for-like YTD)."}
+  account:        {table: accounts, expr: accounts.account_name, description: "Account name.", examples: ["MetroMart", "QuickBasket"]}
+  channel:        {table: accounts, expr: accounts.channel, description: "Modern Trade, Quick Commerce, E-commerce, General Trade."}
+  sku:            {table: products, expr: products.sku, description: "SKU code.", examples: ["ZS-250", "CF-600"]}
+  brand:          {table: products, expr: products.brand, description: "Brand."}
+  category:       {table: products, expr: products.category, description: "Energy, CSD, Hydration, Snacks."}
+  sellout_region: {table: sell_out, expr: sell_out.region, description: "Region for sell-out rows."}
+  sellin_region:  {table: sell_in, expr: sell_in.region, description: "Region for sell-in rows."}
+  promo_id:       {table: promotions, expr: promotions.promo_id, description: "Promotion id."}
+  promo_status:   {table: promotions, expr: promotions.status, description: "Completed or Planned."}
+  promo_region:   {table: promotions, expr: promotions.region, description: "Region of the promotion."}
+  promo_mechanic: {table: promotions, expr: promotions.mechanic, description: "Price-off, Display + feature, Bundle, Trade scheme."}
+
+measures:
+  sellin_cases:      {table: sell_in, expr: "SUM(sell_in.sellin_cases)", unit: cases, description: "Cases shipped to accounts."}
+  gross_sales_inr:   {table: sell_in, expr: "SUM(sell_in.gross_sales_inr)", unit: INR, description: "Sell-in at list price."}
+  net_sales_inr:     {table: sell_in, expr: "ROUND(SUM(sell_in.net_sales_inr), 0)", unit: INR, description: "Sell-in after off-invoice discounts (basis for growth rebates)."}
+  sellout_cases:     {table: sell_out, expr: "SUM(sell_out.sellout_cases)", unit: cases, description: "Cases sold by accounts to shoppers."}
+  closing_stock_cases: {table: sell_out, expr: "SUM(sell_out.closing_stock_cases)", unit: cases, description: "Closing stock at account (sum over weeks - use with a single week or average)."}
+  stockout_weeks:    {table: sell_out, expr: "SUM(CASE WHEN sell_out.closing_stock_cases = 0 THEN 1 ELSE 0 END)", unit: weeks, description: "Count of account-region-SKU weeks with zero closing stock."}
+  promo_count:       {table: promotions, expr: "COUNT(*)", unit: promos, description: "Number of promotions."}
+  promo_baseline_cases: {table: promotions, expr: "SUM(promotions.baseline_cases)", unit: cases, description: "Baseline cases over promo weeks (completed promos)."}
+  promo_actual_cases:   {table: promotions, expr: "SUM(promotions.actual_cases)", unit: cases, description: "Actual cases over promo weeks (completed promos)."}
+  trade_spend_inr:   {table: promotions, expr: "SUM(promotions.trade_spend_inr)", unit: INR, description: "Promotion trade spend (actual for completed, estimate for planned)."}
+  forecast_cases:    {table: forecast, expr: "SUM(forecast.forecast_cases)", unit: cases, description: "Forecast sell-out cases."}
+  forecast_actual_cases: {table: forecast, expr: "SUM(forecast.actual_cases)", unit: cases, description: "Actual sell-out for forecast weeks that have actuals."}
+  forecast_abs_error:    {table: forecast, expr: "SUM(forecast.abs_error_cases)", unit: cases, description: "Absolute forecast error (weeks with actuals)."}
+  promo_uplift_pct:
+    derived: "(promo_actual_cases - promo_baseline_cases) * 100 / promo_baseline_cases"
+    depends_on: [promo_actual_cases, promo_baseline_cases]
+    unit: "%"
+    description: "Percentage uplift of promo weeks over baseline."
+  forecast_wape_pct:
+    derived: "forecast_abs_error * 100 / forecast_actual_cases"
+    depends_on: [forecast_abs_error, forecast_actual_cases]
+    unit: "%"
+    description: "Weighted absolute percentage error of the forecast (lower is better)."
+
+  # CHALLENGE (Day 2): add incremental_cases, incremental_gross_margin_inr and
+  # promo_roi (incremental gross margin / trade spend). See BUILD-GUIDE.md -> Challenge 2.3.

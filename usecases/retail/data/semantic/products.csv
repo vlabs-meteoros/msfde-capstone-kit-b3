@@ -1,0 +1,25 @@
+sku,product_name,category,brand,list_price_usd,return_class,warranty_months,serialized
+HP-ESP-003,Halden Espresso Pro 3,Small Appliances,Halden,449.0,standard_30,24,N
+HP-KET-110,Halden Gooseneck Kettle,Small Appliances,Halden,89.0,standard_30,12,N
+HP-BLD-220,Vireo Power Blender 1200W,Small Appliances,Vireo,179.0,standard_30,24,N
+HP-TOA-040,Vireo 4-Slice Toaster,Small Appliances,Vireo,69.0,standard_30,12,N
+EL-ANC-700,Arcwave ANC-700 Wireless Headphones,Electronics,Arcwave,279.0,electronics_15,12,Y
+EL-EAR-300,Arcwave Buds 300,Electronics,Arcwave,129.0,electronics_15,12,Y
+EL-SBR-500,Arcwave Soundbar 500,Electronics,Arcwave,249.0,electronics_15,12,Y
+EL-LMP-010,Lumio Smart Lamp,Electronics,Lumio,59.0,electronics_15,12,N
+EL-LMP-011,Lumio Smart Lamp (Clearance),Electronics,Lumio,29.0,final_sale,12,N
+HC-PUR-X2,Nimbus Air Purifier X2,Home Comfort,Nimbus Home,329.0,standard_30,24,Y
+HC-PUR-X1,Nimbus Air Purifier X1,Home Comfort,Nimbus Home,199.0,standard_30,24,Y
+HC-FLT-X2,Nimbus X2 HEPA Filter 2-pack,Home Comfort,Nimbus Home,59.0,standard_30,0,N
+HC-HUM-200,Nimbus Cool Mist Humidifier,Home Comfort,Nimbus Home,89.0,standard_30,12,N
+MB-DRF-Q,Drift Hybrid Mattress - Queen,Mattress & Bedding,Drift,1199.0,mattress_trial_100,120,N
+MB-DRF-K,Drift Hybrid Mattress - King,Mattress & Bedding,Drift,1499.0,mattress_trial_100,120,N
+MB-PIL-02,Drift Cooling Pillow (2-pack),Mattress & Bedding,Drift,99.0,standard_30,12,N
+MB-DUV-Q,Harbor Linen Duvet Cover - Queen,Mattress & Bedding,Harbor & Pine,149.0,standard_30,0,N
+FN-DSK-120,Oakline Standing Desk 120cm,Furniture,Oakline,549.0,standard_30,60,N
+FN-CHR-ERG,Oakline Ergonomic Chair,Furniture,Oakline,389.0,standard_30,60,N
+FN-SHF-05,Oakline 5-Tier Shelf,Furniture,Oakline,159.0,standard_30,12,N
+KT-PAN-SET,Copperleaf 10-pc Cookware Set,Kitchen,Copperleaf,299.0,standard_30,120,N
+KT-KNF-08,Copperleaf Chef Knife 8in,Kitchen,Copperleaf,89.0,standard_30,120,N
+KT-DIN-16,Harbor Stoneware Dinner Set 16-pc,Kitchen,Harbor & Pine,129.0,standard_30,0,N
+KT-GLS-12,Harbor Glassware Set 12-pc,Kitchen,Harbor & Pine,49.0,final_sale,0,N

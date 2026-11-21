@@ -1,0 +1,9 @@
+defect_code,defect_name,defect_category,severity,typical_cause
+POR-GAS,Gas porosity,Porosity,Major,Dissolved hydrogen in melt; insufficient degassing
+POR-SHR,Shrinkage porosity,Porosity,Major,Thermal / feeding issue in die
+LEAK,Pressure leak test failure,Leak,Critical,Through-porosity or crack
+CRK,Crack,Structural,Critical,"Hot tearing, ejection stress"
+DIM,Dimensional out of tolerance,Dimensional,Major,"Tool wear, fixture offset"
+BUR,Burr / sharp edge,Surface,Minor,Deburr step skipped or worn tool
+SRF,Surface scratch / dent,Surface,Minor,Handling and packaging
+TRQ,Fastener torque out of spec,Assembly,Major,Tool calibration drift

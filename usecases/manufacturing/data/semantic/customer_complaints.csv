@@ -1,0 +1,6 @@
+complaint_id,complaint_date,customer,part_number,defect_code,units_affected,status,linked_capa,month
+CMP-2026-052,2026-06-03,Hallam Compressors,VC-75,SRF,60,Closed,CAPA-2026-022,2026-06
+CMP-2026-077,2026-07-24,Vantor Trucks,BC-410,TRQ,30,Closed,CAPA-2026-031,2026-07
+CMP-2026-118,2026-10-06,Orion Agri Equipment,HX-220,LEAK,14,Open,,2026-10
+CMP-2026-124,2026-10-15,Orion Agri Equipment,HX-220,LEAK,22,Open,,2026-10
+CMP-2026-131,2026-10-27,Orion Agri Equipment,HX-220,LEAK,9,Open,,2026-10

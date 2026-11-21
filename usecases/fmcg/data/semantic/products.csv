@@ -1,0 +1,9 @@
+sku,product_name,brand,category,units_per_case,list_price_per_case_inr,cogs_per_case_inr,mrp_per_unit_inr
+ZU-250,ZingUp Energy 250ml can,ZingUp,Energy,24,2160,1150,110
+ZS-250,ZingUp Sugar-Free 250ml can,ZingUp,Energy,24,2280,1200,115
+CF-600,Citrus Fizz 600ml PET,Citrus Fizz,CSD,24,760,420,40
+CF-125,Citrus Fizz 1.25L PET,Citrus Fizz,CSD,12,690,380,70
+CP-200,Coco Pure Coconut Water 200ml,Coco Pure,Hydration,24,1080,640,55
+MC-052,Masala Crunch 52g,Masala Crunch,Snacks,48,860,470,20
+MC-110,Masala Crunch 110g,Masala Crunch,Snacks,24,860,450,40
+OB-040,Oat Bite Bar 40g,Oat Bite,Snacks,36,1080,610,35

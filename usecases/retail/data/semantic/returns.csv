@@ -1,0 +1,315 @@
+return_id,order_line_id,return_date,reason,quantity,refund_usd,status
+R-300001,L-900002,2026-06-29,Changed mind,1,59.0,Refunded
+R-300002,L-900029,2026-06-13,Changed mind,2,100.3,Refunded
+R-300003,L-900037,2026-09-10,Comfort - too soft,1,134.1,Refunded
+R-300004,L-900041,2026-07-21,Compatibility issue,1,237.15,Refunded
+R-300005,L-900046,2026-06-21,Defective,1,89.0,Refunded
+R-300006,L-900050,2026-07-26,Defective,2,106.2,Refunded
+R-300007,L-900060,2026-11-04,Too noisy,1,179.1,Refunded
+R-300008,L-900067,2026-08-05,Damaged in delivery,1,159.0,Refunded
+R-300009,L-900079,2026-07-31,Not as described,1,69.0,Refunded
+R-300010,L-900100,2026-06-08,Changed mind,1,237.15,Refunded
+R-300011,L-900101,2026-10-25,Changed mind,1,199.0,Refunded
+R-300012,L-900110,2026-07-11,Changed mind,1,179.0,Refunded
+R-300013,L-900112,2026-08-12,Comfort - too soft,1,1349.1,Refunded
+R-300014,L-900133,2026-06-20,Comfort - too soft,1,84.15,Refunded
+R-300015,L-900153,2026-07-28,Compatibility issue,1,129.0,Refunded
+R-300016,L-900155,2026-08-29,Defective,1,249.0,Refunded
+R-300017,L-900196,2026-06-02,Not as described,1,69.0,Refunded
+R-300018,L-900213,2026-07-04,Damaged in delivery,1,299.0,Refunded
+R-300019,L-900226,2026-07-04,Comfort - too firm,1,1199.0,Refunded
+R-300020,L-900229,2026-09-04,Too noisy,1,329.0,Refunded
+R-300021,L-900230,2026-10-09,Changed mind,1,1019.15,Refunded
+R-300022,L-900240,2026-05-20,Defective,1,279.0,Refunded
+R-300023,L-900260,2026-07-29,Compatibility issue,1,129.0,Refunded
+R-300024,L-900270,2026-09-15,Comfort - too firm,1,99.0,Refunded
+R-300025,L-900271,2026-08-01,Damaged in delivery,1,159.0,Refunded
+R-300026,L-900282,2026-05-26,Not as described,1,449.0,Refunded
+R-300027,L-900284,2026-08-19,Changed mind,1,169.15,Refunded
+R-300029,L-900309,2026-05-28,Compatibility issue,1,59.0,Refunded
+R-300030,L-900313,2026-05-24,Changed mind,1,549.0,Refunded
+R-300031,L-900330,2026-06-04,Damaged in delivery,1,159.0,Refunded
+R-300032,L-900385,2026-08-22,Defective,1,80.1,Refunded
+R-300033,L-900390,2026-05-25,Changed mind,2,178.0,Refunded
+R-300034,L-900391,2026-11-14,Damaged in delivery,2,598.0,Refunded
+R-300035,L-900404,2026-11-02,Defective,1,59.0,Refunded
+R-300036,L-900413,2026-08-13,Changed mind,1,249.0,Refunded
+R-300037,L-900417,2026-07-08,Too noisy,1,89.0,Refunded
+R-300038,L-900430,2026-10-05,Changed mind,1,350.1,Refunded
+R-300039,L-900434,2026-10-01,Defective,1,129.0,Refunded
+R-300040,L-900466,2026-11-11,Not as described,2,151.3,Refunded
+R-300042,L-900508,2026-05-11,Changed mind,1,279.0,Refunded
+R-300043,L-900512,2026-09-24,Not as described,2,808.2,Refunded
+R-300044,L-900537,2026-10-04,Not as described,1,179.0,Refunded
+R-300045,L-900623,2026-08-06,Changed mind,1,129.0,Refunded
+R-300046,L-900627,2026-10-23,Changed mind,1,279.0,Refunded
+R-300047,L-900630,2026-08-28,Not as described,2,898.0,Refunded
+R-300048,L-900662,2026-06-30,Damaged in delivery,1,494.1,Refunded
+R-300049,L-900668,2026-07-21,Not as described,2,322.2,Refunded
+R-300050,L-900704,2026-05-28,Compatibility issue,1,279.0,Refunded
+R-300051,L-900711,2026-08-12,Defective,1,449.0,Refunded
+R-300052,L-900725,2026-08-05,Damaged in delivery,1,89.0,Refunded
+R-300053,L-900770,2026-07-27,Defective,1,129.0,Refunded
+R-300054,L-900773,2026-08-05,Defective,2,178.0,Refunded
+R-300055,L-900809,2026-07-05,Changed mind,1,59.0,Refunded
+R-300056,L-900811,2026-09-09,Changed mind,1,329.0,Refunded
+R-300057,L-900823,2026-08-19,Compatibility issue,1,129.0,Refunded
+R-300058,L-900827,2026-07-23,Changed mind,1,89.0,Refunded
+R-300059,L-900841,2026-09-05,Comfort - too soft,1,149.0,Refunded
+R-300060,L-900877,2026-05-28,Compatibility issue,1,109.65,Refunded
+R-300061,L-900896,2026-11-18,Defective,1,449.0,Refunded
+R-300062,L-900941,2026-07-04,Compatibility issue,1,224.1,Refunded
+R-300063,L-900942,2026-09-24,Changed mind,1,59.0,Refunded
+R-300064,L-900966,2026-07-08,Defective,2,808.2,Refunded
+R-300065,L-900973,2026-06-20,Comfort - too soft,1,89.1,Refunded
+R-300066,L-900987,2026-05-20,Defective,1,109.65,Refunded
+R-300067,L-900989,2026-10-27,Changed mind,1,251.1,Refunded
+R-300068,L-900994,2026-09-30,Damaged in delivery,1,116.1,Refunded
+R-300070,L-901018,2026-05-18,Compatibility issue,1,59.0,Refunded
+R-300071,L-901032,2026-08-27,Comfort - too firm,1,99.0,Refunded
+R-300072,L-901041,2026-10-27,Changed mind,1,134.1,Refunded
+R-300073,L-901053,2026-09-29,Changed mind,1,50.15,Refunded
+R-300074,L-901063,2026-10-23,Changed mind,1,80.1,Refunded
+R-300075,L-901074,2026-07-09,Defective,1,53.1,Refunded
+R-300076,L-901076,2026-07-26,Changed mind,1,279.0,Refunded
+R-300077,L-901090,2026-11-14,Changed mind,1,149.0,Refunded
+R-300078,L-901100,2026-08-09,Too noisy,1,169.15,Refunded
+R-300079,L-901147,2026-10-19,Changed mind,1,224.1,Refunded
+R-300080,L-901168,2026-11-18,Changed mind,1,449.0,Refunded
+R-300081,L-901169,2026-06-09,Changed mind,1,126.65,Refunded
+R-300082,L-901191,2026-11-07,Changed mind,1,126.65,Refunded
+R-300083,L-901197,2026-10-03,Changed mind,2,178.0,Refunded
+R-300084,L-901223,2026-08-26,Assembly issue,1,159.0,Refunded
+R-300085,L-901226,2026-07-10,Changed mind,1,1499.0,Refunded
+R-300088,L-901286,2026-06-30,Changed mind,1,99.0,Refunded
+R-300089,L-901349,2026-08-26,Defective,1,129.0,Refunded
+R-300090,L-901353,2026-06-01,Damaged in delivery,1,494.1,Refunded
+R-300091,L-901377,2026-08-15,Comfort - too firm,1,1499.0,Refunded
+R-300092,L-901378,2026-08-22,Comfort - too soft,1,1019.15,Refunded
+R-300093,L-901397,2026-06-26,Defective,1,129.0,Refunded
+R-300094,L-901409,2026-06-07,Defective,2,118.0,Refunded
+R-300095,L-901411,2026-06-25,Too noisy,2,118.0,Refunded
+R-300096,L-901416,2026-07-23,Damaged in delivery,1,549.0,Refunded
+R-300097,L-901447,2026-06-23,Comfort - too firm,1,89.1,Refunded
+R-300098,L-901491,2026-09-04,Changed mind,1,494.1,Refunded
+R-300099,L-901495,2026-10-18,Too noisy,1,59.0,Refunded
+R-300100,L-901512,2026-06-23,Changed mind,1,134.1,Refunded
+R-300101,L-901550,2026-07-19,Defective,1,449.0,Refunded
+R-300102,L-901580,2026-08-27,Changed mind,1,62.1,Refunded
+R-300103,L-901622,2026-06-23,Too noisy,1,329.0,Refunded
+R-300104,L-901636,2026-09-05,Changed mind,1,249.0,Refunded
+R-300105,L-901658,2026-08-04,Changed mind,1,1199.0,Refunded
+R-300106,L-901676,2026-07-10,Comfort - too firm,1,99.0,Refunded
+R-300108,L-901689,2026-10-16,Comfort - too soft,1,134.1,Refunded
+R-300109,L-901719,2026-07-14,Changed mind,1,404.1,Refunded
+R-300110,L-901734,2026-08-07,Changed mind,1,109.65,Refunded
+R-300111,L-901785,2026-07-15,Compatibility issue,1,59.0,Refunded
+R-300113,L-901805,2026-08-05,Changed mind,1,199.0,Refunded
+R-300114,L-901809,2026-07-08,Changed mind,1,159.0,Refunded
+R-300115,L-901815,2026-06-22,Changed mind,1,84.15,Refunded
+R-300116,L-901857,2026-10-01,Defective,1,129.0,Refunded
+R-300117,L-901883,2026-07-24,Changed mind,1,59.0,Refunded
+R-300118,L-901888,2026-11-14,Damaged in delivery,1,159.0,Refunded
+R-300119,L-901895,2026-09-16,Defective,1,53.1,Refunded
+R-300120,L-901921,2026-05-14,Changed mind,1,80.1,Refunded
+R-300121,L-901924,2026-08-05,Damaged in delivery,1,143.1,Refunded
+R-300122,L-901926,2026-06-17,Too noisy,1,59.0,Refunded
+R-300123,L-901929,2026-10-13,Changed mind,1,89.1,Refunded
+R-300124,L-901947,2026-10-24,Not as described,1,179.0,Refunded
+R-300125,L-901960,2026-06-02,Defective,1,251.1,Refunded
+R-300126,L-901968,2026-07-09,Changed mind,1,126.65,Refunded
+R-300127,L-901970,2026-06-27,Changed mind,1,1274.15,Refunded
+R-300128,L-901975,2026-08-13,Changed mind,1,149.0,Refunded
+R-300129,L-901996,2026-08-09,Compatibility issue,2,100.3,Refunded
+R-300130,L-902001,2026-05-24,Changed mind,1,149.0,Refunded
+R-300131,L-902024,2026-08-25,Changed mind,1,134.1,Refunded
+R-300132,L-902028,2026-09-17,Compatibility issue,1,109.65,Refunded
+R-300133,L-902032,2026-08-25,Compatibility issue,1,116.1,Refunded
+R-300134,L-902049,2026-09-03,Changed mind,1,129.0,Refunded
+R-300135,L-902087,2026-07-16,Changed mind,1,237.15,Refunded
+R-300136,L-902112,2026-07-17,Damaged in delivery,2,258.0,Refunded
+R-300137,L-902124,2026-06-04,Compatibility issue,1,129.0,Refunded
+R-300138,L-902158,2026-07-13,Changed mind,1,129.0,Refunded
+R-300139,L-902161,2026-11-17,Changed mind,1,89.1,Refunded
+R-300140,L-902163,2026-09-16,Defective,1,179.1,Refunded
+R-300141,L-902180,2026-07-28,Defective,1,62.1,Refunded
+R-300142,L-902196,2026-06-23,Damaged in delivery,1,129.0,Refunded
+R-300143,L-902219,2026-09-05,Compatibility issue,1,249.0,Refunded
+R-300144,L-902220,2026-09-01,Changed mind,1,1199.0,Refunded
+R-300145,L-902233,2026-06-17,Changed mind,1,279.0,Refunded
+R-300147,L-902263,2026-09-11,Not as described,1,152.15,Refunded
+R-300148,L-902267,2026-10-21,Defective,2,118.0,Refunded
+R-300149,L-902273,2026-11-19,Too noisy,1,59.0,Refunded
+R-300150,L-902284,2026-06-01,Changed mind,1,116.1,Refunded
+R-300151,L-902301,2026-08-20,Changed mind,1,1199.0,Refunded
+R-300152,L-902313,2026-09-03,Changed mind,2,808.2,Refunded
+R-300153,L-902327,2026-07-11,Not as described,1,449.0,Refunded
+R-300154,L-902345,2026-11-16,Defective,1,80.1,Refunded
+R-300155,L-902350,2026-07-09,Defective,1,129.0,Refunded
+R-300156,L-902352,2026-09-04,Compatibility issue,1,129.0,Refunded
+R-300157,L-902357,2026-08-23,Comfort - too firm,1,1499.0,Refunded
+R-300158,L-902364,2026-06-14,Not as described,1,69.0,Refunded
+R-300159,L-902365,2026-07-04,Changed mind,2,151.3,Refunded
+R-300160,L-902367,2026-10-25,Changed mind,1,249.0,Refunded
+R-300161,L-902384,2026-06-06,Compatibility issue,1,279.0,Refunded
+R-300162,L-902436,2026-11-02,Changed mind,2,100.3,Refunded
+R-300163,L-902441,2026-09-08,Comfort - too soft,1,99.0,Refunded
+R-300164,L-902442,2026-11-19,Compatibility issue,1,109.65,Refunded
+R-300165,L-902477,2026-10-10,Changed mind,1,179.0,Refunded
+R-300166,L-902481,2026-08-23,Defective,1,129.0,Refunded
+R-300167,L-902489,2026-06-15,Defective,1,279.65,Refunded
+R-300168,L-902490,2026-05-31,Too noisy,1,279.65,Refunded
+R-300169,L-902526,2026-06-02,Changed mind,1,249.0,Refunded
+R-300170,L-902533,2026-10-07,Changed mind,1,159.0,Refunded
+R-300171,L-902546,2026-09-03,Too noisy,1,199.0,Refunded
+R-300172,L-902554,2026-09-24,Changed mind,1,237.15,Refunded
+R-300173,L-902561,2026-07-13,Changed mind,2,151.3,Refunded
+R-300174,L-902572,2026-05-04,Too noisy,1,80.1,Refunded
+R-300175,L-902587,2026-09-09,Compatibility issue,1,251.1,Refunded
+R-300176,L-902616,2026-06-27,Changed mind,1,1499.0,Refunded
+R-300177,L-902617,2026-07-19,Changed mind,1,299.0,Refunded
+R-300178,L-902648,2026-09-14,Compatibility issue,1,249.0,Refunded
+R-300179,L-902650,2026-06-17,Compatibility issue,1,129.0,Refunded
+R-300180,L-902663,2026-05-26,Defective,2,151.3,Refunded
+R-300181,L-902699,2026-07-05,Defective,1,59.0,Refunded
+R-300182,L-902729,2026-06-10,Defective,1,50.15,Refunded
+R-300183,L-902731,2026-07-01,Compatibility issue,1,116.1,Refunded
+R-300184,L-902735,2026-07-17,Changed mind,1,159.0,Refunded
+R-300185,L-902740,2026-07-02,Changed mind,1,89.0,Refunded
+R-300186,L-902792,2026-07-21,Comfort - too firm,1,1349.1,Refunded
+R-300187,L-902844,2026-05-25,Defective,1,449.0,Refunded
+R-300188,L-902863,2026-07-30,Changed mind,1,99.0,Refunded
+R-300189,L-902940,2026-08-17,Changed mind,1,129.0,Refunded
+R-300190,L-902946,2026-09-21,Changed mind,1,211.65,Refunded
+R-300191,L-902956,2026-10-01,Too noisy,1,59.0,Refunded
+R-300192,L-902968,2026-11-16,Changed mind,2,151.3,Refunded
+R-300193,L-902971,2026-07-01,Changed mind,1,89.0,Refunded
+R-300194,L-902977,2026-11-01,Changed mind,2,258.0,Refunded
+R-300195,L-903030,2026-10-29,Compatibility issue,1,249.0,Refunded
+R-300197,L-903036,2026-08-13,Defective,1,53.1,Refunded
+R-300198,L-903049,2026-06-26,Compatibility issue,1,237.15,Refunded
+R-300199,L-903071,2026-05-17,Changed mind,1,1199.0,Refunded
+R-300200,L-903130,2026-05-12,Changed mind,1,389.0,Refunded
+R-300201,L-903137,2026-08-15,Defective,1,53.1,Refunded
+R-300202,L-903186,2026-11-09,Changed mind,1,249.0,Refunded
+R-300203,L-903189,2026-10-12,Comfort - too firm,1,149.0,Refunded
+R-300204,L-903204,2026-09-07,Compatibility issue,1,129.0,Refunded
+R-300205,L-903217,2026-07-11,Not as described,2,138.0,Refunded
+R-300207,L-903258,2026-09-18,Defective,2,358.0,Refunded
+R-300208,L-903263,2026-05-25,Compatibility issue,1,279.0,Refunded
+R-300209,L-903281,2026-10-14,Changed mind,1,129.0,Refunded
+R-300211,L-903304,2026-10-11,Changed mind,1,279.0,Refunded
+R-300212,L-903306,2026-08-07,Defective,1,279.0,Refunded
+R-300213,L-903324,2026-06-01,Defective,1,129.0,Refunded
+R-300214,L-903337,2026-06-22,Changed mind,1,89.0,Refunded
+R-300215,L-903351,2026-09-11,Changed mind,2,763.3,Refunded
+R-300216,L-903397,2026-06-21,Compatibility issue,1,279.0,Refunded
+R-300217,L-903427,2026-06-09,Compatibility issue,1,59.0,Refunded
+R-300219,L-903462,2026-07-20,Assembly issue,1,494.1,Refunded
+R-300220,L-903469,2026-10-22,Comfort - too firm,1,99.0,Refunded
+R-300221,L-903490,2026-10-15,Changed mind,2,106.2,Refunded
+R-300222,L-903497,2026-09-30,Changed mind,2,898.0,Refunded
+R-300223,L-903498,2026-09-21,Comfort - too soft,1,99.0,Refunded
+R-300224,L-903499,2026-07-02,Comfort - too soft,1,149.0,Refunded
+R-300225,L-903553,2026-07-30,Changed mind,2,898.0,Refunded
+R-300226,L-903558,2026-07-29,Changed mind,1,449.0,Refunded
+R-300227,L-903566,2026-06-14,Damaged in delivery,1,159.0,Refunded
+R-300228,L-903574,2026-10-28,Damaged in delivery,1,159.0,Refunded
+R-300229,L-903592,2026-05-25,Changed mind,1,99.0,Refunded
+R-300230,L-903608,2026-06-05,Assembly issue,1,389.0,Refunded
+R-300231,L-903611,2026-09-01,Comfort - too firm,1,1199.0,Refunded
+R-300232,L-903637,2026-10-17,Defective,2,118.0,Refunded
+R-300233,L-903639,2026-07-30,Damaged in delivery,1,116.1,Refunded
+R-300234,L-903657,2026-10-10,Changed mind,1,1499.0,Refunded
+R-300235,L-903666,2026-11-15,Defective,1,129.0,Refunded
+R-300236,L-903684,2026-11-05,Changed mind,1,1499.0,Refunded
+R-300237,L-903713,2026-09-10,Defective,1,116.1,Refunded
+R-300238,L-903717,2026-06-30,Defective,2,898.0,Refunded
+R-300239,L-903720,2026-06-03,Changed mind,1,89.1,Refunded
+R-300240,L-903738,2026-05-17,Damaged in delivery,1,75.65,Refunded
+R-300241,L-903744,2026-07-26,Changed mind,1,159.0,Refunded
+R-300242,L-903755,2026-08-03,Defective,2,138.0,Refunded
+R-300243,L-903764,2026-08-03,Not as described,1,89.0,Refunded
+R-300244,L-903768,2026-06-20,Changed mind,2,258.0,Refunded
+R-300245,L-903777,2026-05-28,Compatibility issue,1,129.0,Refunded
+R-300247,L-903803,2026-10-19,Too noisy,1,89.0,Refunded
+R-300248,L-903809,2026-10-16,Not as described,1,179.0,Refunded
+R-300249,L-903838,2026-07-25,Not as described,1,449.0,Refunded
+R-300250,L-903844,2026-09-20,Damaged in delivery,1,389.0,Refunded
+R-300251,L-903878,2026-06-23,Damaged in delivery,2,178.0,Refunded
+R-300254,L-903928,2026-10-18,Changed mind,1,59.0,Refunded
+R-300255,L-903939,2026-09-09,Changed mind,2,118.0,Refunded
+R-300257,L-903979,2026-10-13,Changed mind,1,149.0,Refunded
+R-300258,L-903983,2026-09-29,Changed mind,1,1079.1,Refunded
+R-300259,L-903990,2026-06-14,Comfort - too soft,1,1019.15,Refunded
+R-300260,L-903996,2026-09-07,Changed mind,1,109.65,Refunded
+R-300261,L-904005,2026-05-30,Defective,1,80.1,Refunded
+R-300262,L-904007,2026-08-09,Changed mind,1,126.65,Refunded
+R-300263,L-904025,2026-07-10,Changed mind,1,251.1,Refunded
+R-300264,L-904050,2026-09-13,Changed mind,1,159.0,Refunded
+R-300265,L-904081,2026-06-12,Changed mind,1,329.0,Refunded
+R-300266,L-904104,2026-11-09,Changed mind,1,99.0,Refunded
+R-300267,L-904107,2026-09-20,Defective,1,381.65,Refunded
+R-300268,L-904112,2026-08-07,Changed mind,1,99.0,Refunded
+R-300269,L-904117,2026-08-02,Compatibility issue,1,251.1,Refunded
+R-300270,L-904175,2026-09-16,Changed mind,1,89.1,Refunded
+R-300271,L-904183,2026-07-17,Changed mind,1,89.0,Refunded
+R-300272,L-904209,2026-10-17,Compatibility issue,1,211.65,Refunded
+R-300273,L-904234,2026-08-27,Changed mind,1,279.0,Refunded
+R-300274,L-904265,2026-07-02,Changed mind,1,179.0,Refunded
+R-300275,L-904282,2026-08-20,Compatibility issue,1,59.0,Refunded
+R-300276,L-904290,2026-05-21,Not as described,1,161.1,Refunded
+R-300278,L-904301,2026-06-17,Changed mind,2,304.3,Refunded
+R-300279,L-904304,2026-07-27,Compatibility issue,1,50.15,Refunded
+R-300280,L-904306,2026-07-18,Compatibility issue,1,59.0,Refunded
+R-300281,L-904337,2026-10-19,Damaged in delivery,1,330.65,Refunded
+R-300282,L-904342,2026-05-16,Comfort - too soft,1,1199.0,Refunded
+R-300283,L-904359,2026-08-14,Damaged in delivery,1,159.0,Refunded
+R-300285,L-904408,2026-10-05,Defective,1,53.1,Refunded
+R-300286,L-904413,2026-10-09,Defective,1,237.15,Refunded
+R-300287,L-904424,2026-05-21,Changed mind,1,1199.0,Refunded
+R-300288,L-904430,2026-07-23,Assembly issue,1,135.15,Refunded
+R-300289,L-904499,2026-07-14,Comfort - too firm,1,1199.0,Refunded
+R-300290,L-904500,2026-07-18,Defective,1,199.0,Refunded
+R-300291,L-904517,2026-06-05,Too noisy,1,80.1,Refunded
+R-300292,L-904528,2026-08-27,Defective,1,199.0,Refunded
+R-300293,L-904549,2026-06-01,Comfort - too soft,1,99.0,Refunded
+R-300294,L-904571,2026-09-27,Damaged in delivery,1,494.1,Refunded
+R-300295,L-904582,2026-10-26,Defective,2,106.2,Refunded
+R-300296,L-904599,2026-11-05,Changed mind,2,898.0,Refunded
+R-300297,L-904652,2026-07-04,Changed mind,2,898.0,Refunded
+R-300299,L-904664,2026-06-06,Changed mind,1,53.1,Refunded
+R-300300,L-904675,2026-06-23,Damaged in delivery,1,299.0,Refunded
+R-300301,L-904766,2026-09-03,Comfort - too firm,1,1349.1,Refunded
+R-300302,L-904804,2026-11-09,Changed mind,1,199.0,Refunded
+R-300303,L-904808,2026-06-09,Comfort - too soft,1,1199.0,Refunded
+R-300304,L-904827,2026-11-08,Defective,1,179.1,Refunded
+R-300305,L-904851,2026-09-10,Changed mind,1,89.1,Refunded
+R-300306,L-904895,2026-05-26,Compatibility issue,1,279.0,Refunded
+R-300307,L-904900,2026-06-30,Defective,1,116.1,Refunded
+R-300308,L-904902,2026-06-14,Changed mind,2,178.0,Refunded
+R-300309,L-904929,2026-09-16,Comfort - too firm,1,99.0,Refunded
+R-300311,L-904953,2026-09-06,Changed mind,2,258.0,Refunded
+R-300312,L-904964,2026-10-14,Changed mind,1,50.15,Refunded
+R-300313,L-904977,2026-09-15,Too noisy,1,199.0,Refunded
+R-300314,L-905004,2026-09-10,Defective,2,118.0,Refunded
+R-300315,L-905005,2026-08-27,Defective,1,109.65,Refunded
+R-300316,L-905011,2026-08-04,Defective,1,75.65,Refunded
+R-300317,L-905049,2026-09-30,Defective,1,109.65,Refunded
+R-300318,L-905092,2026-09-30,Comfort - too soft,1,99.0,Refunded
+R-300320,L-905114,2026-07-27,Changed mind,1,149.0,Refunded
+R-300321,L-905116,2026-08-21,Damaged in delivery,1,80.1,Refunded
+R-300322,L-905133,2026-06-11,Defective,1,237.15,Refunded
+R-300323,L-905140,2026-10-24,Damaged in delivery,1,129.0,Refunded
+R-300324,L-905142,2026-06-05,Changed mind,1,199.0,Refunded
+R-300325,L-905172,2026-05-15,Comfort - too soft,1,126.65,Refunded
+R-300326,L-905184,2026-10-05,Defective,1,89.0,Refunded
+R-300327,L-905187,2026-09-26,Too noisy,2,100.3,Refunded
+R-300328,L-905233,2026-11-10,Defective,1,449.0,Refunded
+R-300329,L-905239,2026-09-11,Comfort - too firm,1,126.65,Refunded
+R-300330,L-905258,2026-11-10,Defective,1,224.1,Refunded
+R-300331,L-905266,2026-09-07,Changed mind,1,1274.15,Refunded
+R-300332,L-905270,2026-10-18,Too noisy,1,329.0,Refunded
+R-300333,L-905287,2026-08-25,Assembly issue,1,135.15,Refunded
+R-300334,L-905306,2026-05-11,Too noisy,1,199.0,Refunded
+R-300335,L-905308,2026-10-13,Damaged in delivery,1,75.65,Refunded

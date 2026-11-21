@@ -1,0 +1,65 @@
+# Semantic model for the Retail Unified Customer-Context agent (stand-in for Fabric IQ).
+name: retail_customer_context
+description: >
+  Customers, orders, order lines, returns and support tickets for Harbor & Pine,
+  May-November 2026. Scenario date (today) is 2026-11-20; days_since_delivery in the
+  purchase_history view is calculated as of that date.
+notes:
+  - "Return eligibility rules (windows, tiers, recalls) live in the policy documents, NOT in this model."
+  - "purchase_history is a denormalised view: one row per order line with product and delivery facts."
+  - "Customer PII is limited to first/last name; never ask for or reveal payment card numbers."
+
+tables:
+  customers:        {file: customers.csv, primary_key: customer_id, description: "Customer profile with loyalty tier and household."}
+  products:         {file: products.csv, primary_key: sku, description: "Product master with return class and warranty months."}
+  stores:           {file: stores.csv, primary_key: store_id, description: "Stores and the online channel."}
+  orders:           {file: orders.csv, primary_key: order_id, description: "Order header."}
+  order_lines:      {file: order_lines.csv, primary_key: order_line_id, description: "Order lines with price, discount, serial/lot."}
+  returns:          {file: returns.csv, primary_key: return_id, description: "Completed returns and refunds."}
+  support_tickets:  {file: support_tickets.csv, primary_key: ticket_id, description: "Customer service tickets."}
+  purchase_history: {file: purchase_history.csv, primary_key: order_line_id, description: "Denormalised purchase view with days_since_delivery as of 2026-11-20."}
+
+relationships:
+  - {from: order_lines, to: orders, on: "order_lines.order_id = orders.order_id"}
+  - {from: order_lines, to: products, on: "order_lines.sku = products.sku"}
+  - {from: orders, to: customers, on: "orders.customer_id = customers.customer_id"}
+  - {from: orders, to: stores, on: "orders.store_id = stores.store_id"}
+  - {from: returns, to: order_lines, on: "returns.order_line_id = order_lines.order_line_id"}
+  - {from: support_tickets, to: customers, on: "support_tickets.customer_id = customers.customer_id"}
+
+dimensions:
+  customer_id:   {table: customers, expr: customers.customer_id, description: "Customer id, e.g. C-10482."}
+  loyalty_tier:  {table: customers, expr: customers.loyalty_tier, description: "Bronze, Silver or Gold.", examples: ["Bronze", "Silver", "Gold"]}
+  order_month:   {table: orders, expr: orders.order_month, description: "Order month YYYY-MM."}
+  channel:       {table: orders, expr: orders.channel, description: "Online or Store."}
+  store:         {table: stores, expr: stores.store_name, description: "Store name."}
+  region:        {table: stores, expr: stores.region, description: "Store region (Online for web orders)."}
+  category:      {table: products, expr: products.category, description: "Product category.", examples: ["Electronics", "Mattress & Bedding"]}
+  sku:           {table: products, expr: products.sku, description: "Product SKU."}
+  product_name:  {table: products, expr: products.product_name, description: "Product name."}
+  brand:         {table: products, expr: products.brand, description: "Brand."}
+  return_class:  {table: products, expr: products.return_class, description: "standard_30, electronics_15, mattress_trial_100, final_sale."}
+  return_reason: {table: returns, expr: returns.reason, description: "Reason given on return."}
+  ticket_topic:  {table: support_tickets, expr: support_tickets.topic, description: "Support ticket topic."}
+  ticket_status: {table: support_tickets, expr: support_tickets.status, description: "Open or Closed."}
+
+measures:
+  revenue_usd:    {table: order_lines, expr: "ROUND(SUM(order_lines.line_total), 2)", unit: USD, description: "Gross merchandise sales after line discounts."}
+  units_sold:     {table: order_lines, expr: "SUM(order_lines.quantity)", unit: units, description: "Units sold."}
+  order_count:    {table: order_lines, expr: "COUNT(DISTINCT order_lines.order_id)", unit: orders, description: "Distinct orders."}
+  units_returned: {table: returns, expr: "SUM(returns.quantity)", unit: units, description: "Units returned."}
+  refunds_usd:    {table: returns, expr: "ROUND(SUM(returns.refund_usd), 2)", unit: USD, description: "Refunded value."}
+  ticket_count:   {table: support_tickets, expr: "COUNT(*)", unit: tickets, description: "Support tickets."}
+  return_rate_units:
+    derived: "units_returned / units_sold"
+    depends_on: [units_returned, units_sold]
+    unit: ratio
+    description: "Units returned / units sold for the same slice (0.08 = 8%)."
+  avg_order_value_usd:
+    derived: "revenue_usd / order_count"
+    depends_on: [revenue_usd, order_count]
+    unit: USD
+    description: "Revenue per order."
+
+  # CHALLENGE (Day 2): add net_revenue_usd (revenue minus refunds) and
+  # return_rate_value (refunds / revenue). See BUILD-GUIDE.md -> Challenge 2.3.

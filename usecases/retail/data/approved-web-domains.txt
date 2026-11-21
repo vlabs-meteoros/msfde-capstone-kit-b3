@@ -1,0 +1,4 @@
+# Allow-list for the Foundry IQ Web knowledge source (Bing). One domain per line.
+ftc.gov
+consumer.ftc.gov
+cpsc.gov

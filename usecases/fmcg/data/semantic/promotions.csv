@@ -1,0 +1,27 @@
+promo_id,account_id,account_name,region,sku,start_date,end_date,weeks,mechanic,depth_pct,status,baseline_weekly_cases,actual_weekly_cases,baseline_cases,actual_cases,trade_spend_inr,gross_margin_per_case_inr
+PRM-2501,A-MM,MetroMart,West,ZS-250,2025-05-05,2025-05-25,3,Price-off,20,Completed,403.5,595.7,1210.5,1787.1,407436,1080
+PRM-2502,A-MM,MetroMart,North,ZU-250,2025-06-02,2025-06-15,2,Price-off,15,Completed,576.2,565.5,1152.4,1131.0,183222,1010
+PRM-2503,A-MM,MetroMart,South,CF-600,2025-07-07,2025-07-27,3,Display + feature,10,Completed,935.2,738.0,2805.6,2214.0,84132,340
+PRM-2504,A-MM,MetroMart,East,MC-110,2025-10-06,2025-10-26,3,Price-off,20,Completed,391.0,656.0,1173.0,1968.0,169248,410
+PRM-2505,A-QB,QuickBasket,West,ZS-250,2025-08-04,2025-08-17,2,Price-off,20,Completed,146.8,197.5,293.6,395.0,180120,1080
+PRM-2506,A-QB,QuickBasket,South,CF-600,2025-08-11,2025-08-31,3,Price-off,20,Completed,355.8,450.3,1067.4,1350.9,205352,340
+PRM-2507,A-FK,FreshKart,North,OB-040,2025-09-01,2025-09-14,2,Bundle,15,Completed,65.5,73.0,131.0,146.0,16556,470
+PRM-2508,A-GTW,Sahyadri Distributors,West,MC-052,2025-10-13,2025-11-02,3,Trade scheme,8,Completed,897.8,1211.7,2693.4,3635.1,250088,390
+PRM-2509,A-MM,MetroMart,West,MC-110,2025-10-20,2025-11-02,2,Price-off,20,Completed,452.0,589.5,904.0,1179.0,101394,410
+PRM-2510,A-MM,MetroMart,North,CF-125,2026-01-12,2026-02-01,3,Price-off,15,Completed,446.2,505.3,1338.6,1515.9,78453,310
+PRM-2511,A-QB,QuickBasket,North,ZU-250,2026-02-09,2026-02-22,2,Price-off,15,Completed,201.8,240.0,403.6,480.0,155520,1010
+PRM-2512,A-MM,MetroMart,South,CP-200,2026-04-13,2026-05-03,3,Price-off,15,Completed,514.2,703.0,1542.6,2109.0,170829,440
+PRM-2513,A-MM,MetroMart,West,ZS-250,2026-05-04,2026-05-24,3,Price-off,20,Completed,527.8,728.3,1583.4,2184.9,498180,1080
+PRM-2514,A-FK,FreshKart,West,ZS-250,2026-05-18,2026-05-31,2,Price-off,20,Completed,180.5,252.5,361.0,505.0,161196,1080
+PRM-2515,A-MM,MetroMart,North,ZU-250,2026-06-01,2026-06-14,2,Price-off,15,Completed,571.2,588.5,1142.4,1177.0,190674,1010
+PRM-2516,A-QB,QuickBasket,West,ZS-250,2026-06-15,2026-06-28,2,Price-off,20,Completed,344.5,433.0,689.0,866.0,394896,1080
+PRM-2517,A-GTS,Kaveri Traders,South,CF-600,2026-06-22,2026-07-12,3,Trade scheme,8,Completed,1454.5,1296.7,4363.5,3890.1,236512,340
+PRM-2518,A-MM,MetroMart,East,MC-052,2026-07-13,2026-07-26,2,Display + feature,10,Completed,745.8,936.5,1491.6,1873.0,80539,390
+PRM-2519,A-QB,QuickBasket,South,CF-600,2026-08-10,2026-08-30,3,Price-off,20,Completed,437.2,466.3,1311.6,1398.9,212648,340
+PRM-2520,A-MM,MetroMart,South,CF-600,2026-09-07,2026-09-20,2,Price-off,15,Completed,655.2,740.0,1310.4,1480.0,84360,340
+PRM-2521,A-MM,MetroMart,West,MC-110,2026-10-12,2026-11-01,3,Price-off,20,Completed,475.8,720.7,1427.4,2162.1,185932,410
+PRM-2522,A-FK,FreshKart,North,OB-040,2026-10-19,2026-11-01,2,Bundle,15,Completed,85.2,113.5,170.4,227.0,25741,470
+PRM-2523,A-GTN,Ganga Distribution,North,MC-052,2026-10-05,2026-10-25,3,Trade scheme,8,Completed,1003.0,1356.3,3009.0,4068.9,279947,390
+PRM-2524,A-MM,MetroMart,North,ZU-250,2026-12-07,2026-12-20,2,Price-off,15,Planned,,,,,147744,1010
+PRM-2525,A-QB,QuickBasket,West,ZS-250,2026-12-14,2026-12-27,2,Price-off,20,Planned,,,,,240768,1080
+PRM-2612,A-MM,MetroMart,North,ZU-250,2026-12-14,2026-12-27,2,Price-off,30,Planned,,,,,295488,1010

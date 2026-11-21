@@ -1,0 +1,5 @@
+part_number,part_name,material,line_id,unit_cost_usd,rework_cost_usd,customer
+HX-220,Hydraulic pump housing 220cc,A356 aluminium (die cast),L2,38.5,6.0,Orion Agri Equipment
+HX-180,Hydraulic pump housing 180cc,A356 aluminium (die cast),L2,29.0,5.0,Orion Agri Equipment
+BC-410,Brake caliper bracket,EN8 steel (machined),L1,21.75,3.5,Vantor Trucks
+VC-75,Valve cover 75mm,A356 aluminium (die cast),L3,12.4,2.0,Hallam Compressors

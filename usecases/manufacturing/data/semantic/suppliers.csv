@@ -1,0 +1,5 @@
+supplier_id,supplier_name,material,approval_status,spec_doc
+S-ALV,Alvara Castings Alloys,A356 ingot,Approved,SUP-SPEC-ALV-A356 Rev 4
+S-MER,Meridian Metals,A356 ingot,Approved - conditional,SUP-SPEC-ALV-A356 Rev 4
+S-TES,Tessaro Steel,EN8 steel bar,Approved,SUP-SPEC-TES-EN8 Rev 2
+S-BRL,Brightline Fasteners,M10 flange bolts,Approved,SUP-SPEC-BRL-M10 Rev 3

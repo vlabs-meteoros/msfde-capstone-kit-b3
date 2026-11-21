@@ -1,0 +1,4 @@
+line_id,line_name,process
+L1,Line 1 - CNC machining & fastening,Machining + torque assembly
+L2,Line 2 - High-pressure die casting cell A,HPDC + degassing + machining
+L3,Line 3 - High-pressure die casting cell B,HPDC + trimming

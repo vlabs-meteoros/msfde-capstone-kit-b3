@@ -1,0 +1,8 @@
+account_id,account_name,channel,regions_served,off_invoice_pct
+A-MM,MetroMart,Modern Trade,North;South;East;West,4.0
+A-QB,QuickBasket,Quick Commerce,North;South;West,6.0
+A-FK,FreshKart,E-commerce,North;South;East;West,5.0
+A-GTW,Sahyadri Distributors,General Trade,West,2.5
+A-GTS,Kaveri Traders,General Trade,South,2.5
+A-GTN,Ganga Distribution,General Trade,North,2.5
+A-GTE,Hooghly Agencies,General Trade,East,2.5

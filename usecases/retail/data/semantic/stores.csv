@@ -1,0 +1,8 @@
+store_id,store_name,state,region
+ST-SEA-01,Seattle Westlake,WA,West
+ST-PDX-02,Portland Pearl,OR,West
+ST-DEN-03,Denver Union,CO,Mountain
+ST-CHI-04,Chicago Fulton,IL,Midwest
+ST-AUS-05,Austin Domain,TX,South
+ST-BOS-06,Boston Seaport,MA,Northeast
+WEB,harborandpine online,,Online

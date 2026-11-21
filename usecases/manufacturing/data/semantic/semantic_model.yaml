@@ -1,0 +1,89 @@
+# Semantic model for the Manufacturing Quality-Insights agent.
+# This file plays the role of a Fabric IQ semantic model / ontology:
+# it gives the agent governed business definitions on top of raw tables.
+name: manufacturing_quality
+description: >
+  Production, defect, supplier-lot and customer-complaint data for Kestrel Motion Systems
+  Plant KMS-P2, June-October 2026. One production batch = one line x shift x day.
+notes:
+  - "PPM = defective units per million units produced."
+  - "Defect quantities are counted at the stage where the defect was detected."
+  - "Hydrogen spec for A356 ingot is defined in supplier specification documents, not in this model."
+
+tables:
+  production_batches:
+    file: production_batches.csv
+    primary_key: batch_id
+    description: One row per line, shift and production day, with process parameters from MES.
+  defects:
+    file: defects.csv
+    primary_key: defect_id
+    description: Nonconforming units recorded against a batch, by defect code and detection stage.
+  defect_codes:
+    file: defect_codes.csv
+    primary_key: defect_code
+    description: Defect taxonomy with category and severity.
+  parts:
+    file: parts.csv
+    primary_key: part_number
+    description: Part master with unit cost and rework cost.
+  lines:
+    file: lines.csv
+    primary_key: line_id
+    description: Production lines.
+  supplier_lots:
+    file: supplier_lots.csv
+    primary_key: lot_id
+    description: Raw material lots with certificate-of-conformance values and receiving disposition.
+  suppliers:
+    file: suppliers.csv
+    primary_key: supplier_id
+    description: Approved suppliers.
+  complaints:
+    file: customer_complaints.csv
+    primary_key: complaint_id
+    description: Customer complaints / field escapes.
+
+relationships:            # many-to-one, from -> to
+  - {from: defects, to: production_batches, on: "defects.batch_id = production_batches.batch_id"}
+  - {from: defects, to: defect_codes, on: "defects.defect_code = defect_codes.defect_code"}
+  - {from: production_batches, to: parts, on: "production_batches.part_number = parts.part_number"}
+  - {from: production_batches, to: lines, on: "production_batches.line_id = lines.line_id"}
+  - {from: production_batches, to: supplier_lots, on: "production_batches.material_lot_id = supplier_lots.lot_id"}
+  - {from: supplier_lots, to: suppliers, on: "supplier_lots.supplier_id = suppliers.supplier_id"}
+  - {from: complaints, to: parts, on: "complaints.part_number = parts.part_number"}
+
+dimensions:
+  production_date: {table: production_batches, expr: production_batches.production_date, description: "Production date (YYYY-MM-DD)."}
+  week_start:      {table: production_batches, expr: production_batches.week_start, description: "Monday of the production week (YYYY-MM-DD)."}
+  month:           {table: production_batches, expr: production_batches.month, description: "Production month (YYYY-MM).", examples: ["2026-08", "2026-09"]}
+  line:            {table: production_batches, expr: production_batches.line_id, description: "Production line id.", examples: ["L1", "L2", "L3"]}
+  shift:           {table: production_batches, expr: production_batches.shift, description: "Shift A (06-14) or B (14-22)."}
+  part_number:     {table: parts, expr: parts.part_number, description: "Part number.", examples: ["HX-220", "HX-180", "BC-410", "VC-75"]}
+  material_lot:    {table: production_batches, expr: production_batches.material_lot_id, description: "Raw material lot consumed by the batch."}
+  supplier:        {table: suppliers, expr: suppliers.supplier_name, description: "Supplier of the raw material lot."}
+  defect_code:     {table: defect_codes, expr: defect_codes.defect_code, description: "Defect code.", examples: ["POR-GAS", "LEAK", "TRQ"]}
+  defect_category: {table: defect_codes, expr: defect_codes.defect_category, description: "Porosity, Leak, Structural, Dimensional, Surface, Assembly."}
+  detected_stage:  {table: defects, expr: defects.detected_stage, description: "Where the defect was found (X-ray, Leak test, ...)."}
+  complaint_month: {table: complaints, expr: complaints.month, description: "Month the customer complaint was received."}
+  customer:        {table: complaints, expr: complaints.customer, description: "Customer that raised the complaint."}
+
+measures:
+  units_produced:     {table: production_batches, expr: "SUM(production_batches.units_produced)", unit: units, description: "Total units produced."}
+  batch_count:        {table: production_batches, expr: "COUNT(*)", unit: batches, description: "Number of production batches."}
+  avg_degas_minutes:  {table: production_batches, expr: "ROUND(AVG(production_batches.degas_minutes), 2)", unit: minutes, description: "Average rotary degassing time per batch (die-cast lines only)."}
+  max_density_index:  {table: production_batches, expr: "MAX(production_batches.density_index_pct)", unit: "%", description: "Highest reduced-pressure density index recorded."}
+  avg_density_index:  {table: production_batches, expr: "ROUND(AVG(production_batches.density_index_pct), 2)", unit: "%", description: "Average reduced-pressure density index."}
+  defect_qty:         {table: defects, expr: "SUM(defects.quantity)", unit: units, description: "Defective units recorded."}
+  scrap_qty:          {table: defects, expr: "SUM(defects.scrap_qty)", unit: units, description: "Defective units scrapped."}
+  scrap_cost_usd:     {table: defects, expr: "ROUND(SUM(defects.scrap_qty * parts.unit_cost_usd), 2)", unit: USD, description: "Scrap quantity x part unit cost."}
+  complaint_units:    {table: complaints, expr: "SUM(complaints.units_affected)", unit: units, description: "Units affected in customer complaints."}
+  complaint_count:    {table: complaints, expr: "COUNT(*)", unit: complaints, description: "Number of customer complaints."}
+  defect_rate_ppm:
+    derived: "defect_qty * 1000000 / units_produced"
+    depends_on: [defect_qty, units_produced]
+    unit: PPM
+    description: "Defective units per million produced (for the same slice)."
+
+  # CHALLENGE (Day 2): add first_pass_yield_pct and cost_of_poor_quality_usd here.
+  # See BUILD-GUIDE.md -> Challenge 2.3.
