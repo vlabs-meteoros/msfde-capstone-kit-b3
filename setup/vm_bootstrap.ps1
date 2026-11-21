@@ -26,6 +26,11 @@ if (Test-Path "$Target\.git") {
   Write-Host "Repo exists - pulling latest"
   git -C $Target pull --ff-only
 } else {
+  if (Test-Path $Target) {
+    $old = "$Target-old-$(Get-Date -Format yyyyMMddHHmmss)"
+    Write-Host "Existing non-git folder moved to $old"
+    Move-Item $Target $old
+  }
   git clone $RepoUrl $Target
 }
 Set-Location $Target
