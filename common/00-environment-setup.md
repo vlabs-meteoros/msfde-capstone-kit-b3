@@ -84,4 +84,3 @@ az role assignment create --assignee <project-MI-principal-id> --role "Search In
 | `doctor`: model deployment not found | Wrong deployment name (not model name) | Foundry portal → Models + endpoints → copy the **deployment** name |
 | Knowledge base: 403 from search | Project managed identity lacks Search Index Data Reader | Section 5 |
 | Agent answers with no citations or says "I don't know" for everything | Knowledge source still indexing, or MCP connection points at the wrong KB | Wait for indexing; check `KB_CONNECTION_NAME` and the target URL |
-| Web knowledge source missing or greyed out (Retail) | Admin disabled Web Knowledge Source | Use the web-snapshot fallback (Retail build guide) |

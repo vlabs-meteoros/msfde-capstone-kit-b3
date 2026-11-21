@@ -241,7 +241,7 @@ Pick the two worst failure patterns from the report (see the diagnosis table in 
 `python common/starter/evaluate.py runs/<file>.jsonl --cloud`, or run the evaluation from the portal. Screenshot groundedness and relevance results.
 
 ### Challenge 3.4 · Governance evidence (30 min)
-Complete the identity, scoping, audit and Agent 365 mapping from [`common/04-governance.md`](../../common/04-governance.md). Manufacturing-specific points to address:
+Complete the identity, scoping, audit and production governance design from [`common/04-governance.md`](../../common/04-governance.md). Manufacturing-specific points to address:
 - The agent is **decision support**: CAPA decisions and customer communication stay with humans.
 - Supplier and customer data sensitivity (supplier quality performance is commercially sensitive).
 - Who may extend the semantic model (measure definitions are quality-system controlled documents).

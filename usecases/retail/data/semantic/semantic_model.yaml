@@ -1,4 +1,4 @@
-# Semantic model for the Retail Unified Customer-Context agent (stand-in for Fabric IQ).
+# Semantic model for the Retail Unified Customer-Context agent.
 name: retail_customer_context
 description: >
   Customers, orders, order lines, returns and support tickets for Harbor & Pine,

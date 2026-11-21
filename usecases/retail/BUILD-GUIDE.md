@@ -30,22 +30,16 @@ Work out by hand: can C-10482 return her espresso machine today? Write down your
 ### Challenge 1.4 · Foundry IQ knowledge base with documents and approved web (45 min)
 In **Foundry portal → Build → Knowledge**, create:
 1. Knowledge source `ks-<alias>-rtl-docs` from `data/docs/`
-2. An **approved web** source, using **one** of these:
-   - **Option A (preferred if allowed): Web knowledge source** (Bing) restricted to the domains in `data/approved-web-domains.txt`
-   - **Option B (fallback): snapshot source** `ks-<alias>-rtl-web-snapshots` from `data/web-snapshots/`
-   - Doing **both** is best: live web for regulator content, snapshots for the manufacturer pages, which in this synthetic world use `.example` domains that Bing can't reach.
+2. Two **approved web** sources:
+   - **Web knowledge source** (Bing) restricted to the domains in `data/approved-web-domains.txt`, for live regulator content
+   - **Snapshot source** `ks-<alias>-rtl-web-snapshots` from `data/web-snapshots/`, for the manufacturer pages (in this synthetic world they use `.example` domains, so they come as curated snapshots)
 3. Knowledge base `kb-<alias>-rtl` using all your sources, query planning on, reasoning effort **low**
 
 Test: *"What should a customer do if their Nimbus X2 purifier smells of burning?"*
 
 **Done when:** the answer cites the internal recall notice **and** the Nimbus web snapshot.
 
-<details><summary>Hint: Web knowledge source not available or greyed out</summary>
-
-Your admin may have disabled Web Knowledge Source at subscription level, or the region doesn't support it. That's realistic: many enterprises block it because queries leave the Azure compliance boundary and Bing terms apply. Use Option B and **document the decision** in your governance notes. That's worth marks under Deployment Readiness.
-</details>
-
-<details><summary>Hint: why snapshots are a legitimate design, not a hack</summary>
+<details><summary>Hint: why curated snapshots are a strong design choice</summary>
 
 A curated, periodically refreshed snapshot of approved pages gives you control over content, auditability (you know exactly what the agent saw) and no data egress. The trade-off is freshness. Each snapshot carries `Source URL` and `Captured` date; make your agent cite both.
 </details>
@@ -187,7 +181,7 @@ Fix the two worst failure patterns (see [`common/03-evaluation.md`](../../common
 ### Challenge 3.4 · Governance evidence (30 min)
 Complete [`common/04-governance.md`](../../common/04-governance.md). Retail-specific points:
 - **PII and payment data:** what the agent can see and say; data minimisation in the semantic model (no card numbers exist; names only).
-- **Web grounding data boundary:** Bing Web knowledge source sends queries outside the Azure compliance boundary, isn't covered by the DPA, and incurs cost. Justify live web vs snapshots, and how snapshots are refreshed and approved.
+- **Web grounding:** which domains are allowed and why, which content comes live vs from snapshots, and how snapshots are refreshed and approved.
 - **Associate vs customer-facing:** what would change if customers talked to the agent directly?
 
 ### Challenge 3.5 · Report, presentation, submission (80 min)

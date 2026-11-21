@@ -14,7 +14,7 @@
 - Diagram
 - Component table: agent, model, Foundry IQ knowledge base and sources, semantic layer, client
 - Key design decisions and alternatives considered (why prompt agent, why this retrieval effort, why governed measures)
-- Lab substitutes and the production swap (Fabric IQ, Agent 365, web)
+- Production path for each component (semantic layer, web, governance)
 
 ## 4. Implementation steps (reproducible)
 1. Prerequisites and environment variables (names only, no secrets)
@@ -39,7 +39,7 @@
 ## 8. Governance
 - Identity, access scoping (least-privilege table), audit evidence
 - Guardrails and human-in-the-loop
-- Agent 365 mapping for production
+- Production governance design
 
 ## 9. Deployment readiness
 - Runbook: deploy, roll back to a previous version, monitor, evaluation gate

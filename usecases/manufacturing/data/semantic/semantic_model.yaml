@@ -1,6 +1,5 @@
 # Semantic model for the Manufacturing Quality-Insights agent.
-# This file plays the role of a Fabric IQ semantic model / ontology:
-# it gives the agent governed business definitions on top of raw tables.
+# It gives the agent governed business definitions on top of raw tables.
 name: manufacturing_quality
 description: >
   Production, defect, supplier-lot and customer-complaint data for Kestrel Motion Systems

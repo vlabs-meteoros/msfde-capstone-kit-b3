@@ -14,7 +14,7 @@ Return a **unified, cited answer** across sources:
 
 - Customer and transaction context from the semantic layer (tier, purchase history, days since delivery, serial or lot, protection plan)
 - Policy and product knowledge from Foundry IQ (returns, price match, loyalty, warranty, recall notice, product guides)
-- **Approved web** context from Foundry IQ (manufacturer pages, regulators) through a Web knowledge source with an allow-list, or the provided **web snapshots** if Web is unavailable
+- **Approved web** context from Foundry IQ (manufacturer pages, regulators) through a Web knowledge source with an allow-list, plus curated **web snapshots** of manufacturer pages
 - A clear decision (eligible / not eligible / route to warranty / recall procedure), next steps for the associate, and citations
 - Protect customer data: never reveal payment card details; minimum PII
 

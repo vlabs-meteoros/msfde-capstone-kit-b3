@@ -1,9 +1,9 @@
 # 04 · Governance: identity, access scoping, audit
 
-The brief asks for **Agent 365** governance. Agent 365 isn't enabled in the lab tenant, so you produce:
+Your agent needs a governance story the panel can check. You produce:
 
-1. **Evidence** of the controls Foundry already gives you, and
-2. A **governance design** that maps those controls to Agent 365 for production.
+1. **Evidence** of the controls Foundry gives you, and
+2. A **governance design** for running the agent in production.
 
 Deliver this as the *Governance* section of your project report (template in `templates/project-report-template.md`).
 
@@ -41,20 +41,20 @@ Also cover:
 | Evaluation history | Your `runs/*.eval.md` reports and Foundry evaluation runs |
 | Data lineage for numbers | `semantic://` citations in answers + `sql` in the tool result (log it) |
 
-If tracing isn't available in your project, say so and show the client-side log from `agent_app.py ask` (it prints response IDs, tool calls and citations).
+Add the client-side log from `agent_app.py ask` as supporting evidence (it prints response IDs, tool calls and citations).
 
-## D. Agent 365 mapping (production design)
+## D. Production governance design
 
-| Governance need | Lab evidence (today) | Agent 365 in production |
+| Governance need | Lab evidence (today) | Production design |
 |---|---|---|
-| Inventory and ownership | Agent name, version, owner in report | Register the agent in the Agent 365 registry with owner, purpose and data classification |
-| Identity | Project MI / agent identity | Entra Agent ID managed through Agent 365; lifecycle (create, rotate, disable) |
+| Inventory and ownership | Agent name, version, owner in report | Register the agent in the enterprise agent inventory with owner, purpose and data classification |
+| Identity | Project MI / agent identity | Microsoft Entra Agent ID; lifecycle (create, rotate, disable) |
 | Access policies | RBAC table above | Central access policies and conditional access for agents; least-privilege templates |
-| Observability and audit | Foundry traces, eval reports | Agent 365 activity and audit views, alerts on anomalous tool use |
+| Observability and audit | Foundry traces, eval reports | Central activity and audit views, alerts on anomalous tool use |
 | Lifecycle | Versioned deploys, eval before promote | Approval workflow to publish; decommissioning |
 | Risk | Guardrails, refusal tests | Policy-based blocking, risk reports |
 
-> Describe Agent 365 capabilities as **planned design**. Don't claim you configured something you couldn't access; the panel will ask.
+> Present production controls as **planned design**. Don't claim you configured something you didn't; the panel will ask.
 
 ## E. Five questions the panel will probably ask
 

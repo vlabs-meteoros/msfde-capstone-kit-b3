@@ -1,17 +1,17 @@
-# 02 · The local semantic layer (Fabric IQ stand-in)
+# 02 · The semantic layer
 
 ## Why it exists
 
-Fabric IQ gives agents **business meaning** on top of raw tables: named entities, relationships and *governed* measures. "Defect rate", "return rate" or "net sales" always mean one agreed calculation. The lab tenant has no Fabric capacity, so this kit ships a small engine with the same contract:
+A semantic layer gives agents **business meaning** on top of raw tables: named entities, relationships and *governed* measures. "Defect rate", "return rate" or "net sales" always mean one agreed calculation. This kit ships a small engine that does exactly that:
 
-| Fabric IQ concept | Local equivalent |
+| Concept | In this kit |
 |---|---|
 | Semantic model / ontology | `usecases/<uc>/data/semantic/semantic_model.yaml` |
-| Lakehouse tables | CSV files next to the YAML (loaded into in-memory SQLite) |
-| Measures (DAX) | `measures:` (SQL aggregate or a `derived:` formula over other measures) |
+| Tables | CSV files next to the YAML (loaded into in-memory SQLite) |
+| Measures | `measures:` (SQL aggregate or a `derived:` formula over other measures) |
 | Dimensions and attributes | `dimensions:` |
 | Relationships | `relationships:` (many-to-one, `from` → `to`) |
-| Data agent / ontology query | Three agent tools: `describe_semantic_model`, `query_metrics`, `lookup_records` |
+| Query interface | Three agent tools: `describe_semantic_model`, `query_metrics`, `lookup_records` |
 
 The agent **never writes SQL**. It asks for measures by name, grouped by dimensions and filtered by dimension values. The engine builds parameterised SQL, avoids double-counting when measures come from different fact tables, and returns a **citation** string to quote in the answer.
 
@@ -78,4 +78,4 @@ Rules:
 
 - Explain that the definitions are **governed** and the agent can't invent a formula.
 - Show the `semantic://` citation in an answer and the matching SQL (`--show-sql`).
-- Explain the swap to Fabric IQ: the YAML maps to a Fabric semantic model or ontology, and the tools map to a Fabric data agent (Foundry has a Fabric data agent tool) or a Fabric Ontology knowledge source in Foundry IQ.
+- Explain the production path: the same measure contract served from governed production tables, with the tools hosted server-side so every agent shares one set of definitions.

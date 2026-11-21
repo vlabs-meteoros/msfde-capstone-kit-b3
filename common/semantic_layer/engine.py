@@ -1,10 +1,9 @@
 """
-Local semantic layer - a lightweight stand-in for Fabric IQ.
+Semantic layer.
 
-Fabric IQ gives an agent *business meaning* on top of raw tables: named
-entities, relationships, dimensions and governed measures (for example
-"defect rate in PPM" always means the same calculation). This module gives
-you the same contract locally:
+Gives an agent *business meaning* on top of raw tables: named entities,
+relationships, dimensions and governed measures (for example "defect rate
+in PPM" always means the same calculation). It consists of:
 
   * semantic_model.yaml  - declares tables, relationships, dimensions, measures
   * CSV files            - the data (loaded into an in-memory SQLite database)

@@ -16,18 +16,18 @@ All companies, people, products and numbers in this repo are synthetic.
 
 ---
 
-## What the lab environment gives you, and what stands in for the rest
+## What you build with
 
-| Capability in the brief | In this lab | Why |
-|---|---|---|
-| Azure AI Foundry agent | ✅ Foundry Agent Service (portal + Python SDK) | |
-| Foundry IQ grounding | ✅ Foundry IQ knowledge base on Azure AI Search | |
-| Approved web (Retail) | ✅ Foundry IQ **Web** knowledge source with a domain allow-list, **or** the provided web snapshots if Web is disabled | Web grounding costs extra, sends queries outside the Azure boundary, and an admin may have turned it off |
-| Fabric IQ semantics | 🔁 **Local semantic layer** ([common/semantic_layer](common/semantic_layer)): a YAML semantic model over CSVs, exposed to the agent as function tools | No Fabric capacity in the lab tenant. The contract is the same as Fabric IQ's: governed measures, dimensions and entities, never raw SQL. |
-| Evaluation | ✅ Local checks + Foundry built-in evaluators | |
-| Agent 365 governance | 🔁 **Governance design + evidence** from what Foundry already gives you (identity, RBAC, tracing, guardrails), mapped to Agent 365 controls | Agent 365 isn't enabled in the lab tenant |
+| Capability | In this lab |
+|---|---|
+| Agent | Foundry Agent Service (portal + Python SDK) |
+| Document grounding | Foundry IQ knowledge base on Azure AI Search |
+| Approved web (Retail) | Foundry IQ **Web** knowledge source with a domain allow-list, plus curated web snapshots for manufacturer pages |
+| Business semantics | **Semantic layer** ([common/semantic_layer](common/semantic_layer)): a YAML semantic model over CSVs, exposed to the agent as function tools. Governed measures, dimensions and entities, never raw SQL. |
+| Evaluation | Local checks + Foundry built-in evaluators |
+| Governance | Governance design + evidence from Foundry identity, RBAC, tracing and guardrails |
 
-When you present, say plainly which pieces are substitutes and how you would swap in the real service. The panel scores that under *Deployment Readiness*.
+When you present, explain how each piece would run in production. The panel scores that under *Deployment Readiness*.
 
 ---
 
@@ -53,10 +53,10 @@ requirements.txt                  <- participant Python packages
 common/
   LAB-ENVIRONMENT.md              <- your account, project, endpoints, naming rules (read first)
   00-environment-setup.md         <- Day 1: VM, Azure access, Foundry, Foundry IQ
-  01-reference-architecture.md    <- the target architecture and what's substituted
-  02-semantic-layer.md            <- how the Fabric IQ stand-in works and how to extend it
+  01-reference-architecture.md    <- the target architecture and production path
+  02-semantic-layer.md            <- how the semantic layer works and how to extend it
   03-evaluation.md                <- evaluation approach, metrics, evidence
-  04-governance.md                <- identity, scoping, audit (Agent 365 mapping)
+  04-governance.md                <- identity, scoping, audit, production governance
   05-submission-and-presentation.md
   semantic_layer/                 <- the local semantic layer engine (Python)
   starter/                        <- agent_app.py (deploy/chat/batch), evaluate.py, create_kb_connection.py
@@ -66,8 +66,8 @@ usecases/<track>/
   BUILD-GUIDE.md                  <- day-by-day challenges with hints
   agent/instructions.md           <- your agent's system prompt (starts minimal, you improve it)
   data/docs/                      <- knowledge documents for Foundry IQ (PDF/DOCX)
-  data/semantic/                  <- CSVs + semantic_model.yaml (Fabric IQ stand-in)
-  data/web-snapshots/             <- (Retail only) fallback for approved web
+  data/semantic/                  <- CSVs + semantic_model.yaml (semantic layer)
+  data/web-snapshots/             <- (Retail only) curated manufacturer web pages
   eval/test-questions.jsonl       <- evaluation set with ground truth
 tools/                            <- kit validator
 setup/                            <- VM bootstrap script

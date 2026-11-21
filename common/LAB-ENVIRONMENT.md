@@ -55,4 +55,4 @@ Upload your use case's documents to your container:
 az storage blob upload-batch --account-name stfdeb35tric --auth-mode login -d docs-fdeuserN -s usecases/<usecase>/data/docs
 ```
 
-(Retail: also upload `data/web-snapshots` into a folder or a second container if you use the snapshot fallback.)
+(Retail: also upload `data/web-snapshots` to folder `retail-web` for the snapshot knowledge source.)

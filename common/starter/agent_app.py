@@ -13,7 +13,7 @@ What lives where
     trace it in the Foundry portal.
   * Foundry IQ (document / web grounding) is attached as an MCP tool pointing at your knowledge
     base. Retrieval runs server-side; you write no RAG code.
-  * The local semantic layer (Fabric IQ stand-in) is attached as three FUNCTION tools. Function
+  * The semantic layer is attached as three FUNCTION tools. Function
     tools execute on the client, which is why chat/batch run here: when the agent asks for
     query_metrics, this script runs it against the CSVs and returns the JSON result.
 

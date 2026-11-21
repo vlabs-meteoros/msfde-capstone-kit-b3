@@ -1,4 +1,4 @@
-# Semantic model for the FMCG Demand & Trade agent (stand-in for Fabric IQ).
+# Semantic model for the FMCG Demand & Trade agent.
 name: fmcg_demand_trade
 description: >
   Weekly sell-in (shipments to customers), sell-out (customer sales to shoppers incl. closing stock),
