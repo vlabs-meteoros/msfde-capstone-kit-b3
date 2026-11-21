@@ -69,14 +69,14 @@ usecases/<track>/
   data/semantic/                  <- CSVs + semantic_model.yaml (Fabric IQ stand-in)
   data/web-snapshots/             <- (Retail only) fallback for approved web
   eval/test-questions.jsonl       <- evaluation set with ground truth
-facilitator/                      <- NOT for participants (answer keys, planted signals, run-of-show)
-tools/                            <- data generator and kit validator
+tools/                            <- kit validator
+setup/                            <- VM bootstrap script
 ```
 
 ## Quick start
 
 ```bash
-git clone <this repo> && cd msfde-capstone-kit
+git clone https://github.com/vlabs-meteoros/msfde-capstone-kit-b3 msfde-capstone-kit && cd msfde-capstone-kit
 python -m venv .venv && .venv\Scripts\activate        # Windows
 pip install -r requirements.txt
 copy .env.sample .env                                  # then fill it in
