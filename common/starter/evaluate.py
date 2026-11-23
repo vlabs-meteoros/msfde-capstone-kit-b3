@@ -23,6 +23,13 @@ import json
 import os
 import re
 import sys
+
+# Windows consoles default to a legacy code page; answers contain characters such as 【】 and en dashes.
+for _s in (sys.stdout, sys.stderr):
+    try:
+        _s.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 import time
 from pathlib import Path
 
