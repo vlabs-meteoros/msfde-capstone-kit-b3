@@ -60,7 +60,7 @@ def local_eval(row: dict) -> dict:
             src_results.append(s[4:].lower() in haystack or "http" in haystack)
         else:
             src_results.append(_norm(s.split(" ")[0]) in haystack or (row.get("kb_calls", 0) > 0 and _norm(s.split("_")[0]) in haystack))
-    refused = bool(REFUSAL_PATTERNS.search(row.get("answer", "")))
+    refused = bool(REFUSAL_PATTERNS.search(row.get("answer", "").replace("\u2019", "'")))  # curly apostrophes
     return {
         "fact_recall": round(len(hits) / len(must), 2) if must else None,
         "missing_facts": [m for m in must if m not in hits],
