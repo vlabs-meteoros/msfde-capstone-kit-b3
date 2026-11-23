@@ -45,7 +45,7 @@ from common.semantic_layer import SemanticModel  # noqa: E402
 load_dotenv(ROOT / ".env")
 
 KB_API_VERSION = os.getenv("KB_API_VERSION", "2026-11-01-preview")
-MAX_TOOL_ROUNDS = 8
+MAX_TOOL_ROUNDS = 12
 
 
 # --------------------------------------------------------------------------- config
@@ -155,6 +155,16 @@ def run_turn(openai, c: dict, semantic: SemanticModel, conversation_id: str, use
             break
         response = openai.responses.create(conversation=conversation_id, input=outputs, extra_body=agent_ref)
         response_ids.append(response.id)
+    else:
+        # Tool budget used up: answer any outstanding calls with a stop signal so the agent writes its answer.
+        pending = [{"type": "function_call_output", "call_id": i.call_id,
+                    "output": json.dumps({"error": "Tool budget reached. Answer now with the evidence you already have."})}
+                   for i in response.output if getattr(i, "type", "") == "function_call"]
+        if pending:
+            if verbose:
+                print("  [budget] tool budget reached - asking the agent to answer")
+            response = openai.responses.create(conversation=conversation_id, input=pending, extra_body=agent_ref)
+            response_ids.append(response.id)
     return {
         "answer": response.output_text,
         "citations": _annotations(response),
