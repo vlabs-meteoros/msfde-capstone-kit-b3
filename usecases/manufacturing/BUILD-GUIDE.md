@@ -48,6 +48,8 @@ python -m common.semantic_layer usecases/manufacturing/data/semantic/semantic_mo
 ### Challenge 1.4 · Foundry IQ knowledge base over the quality documents (40 min)
 In the **Foundry portal (new Foundry) → Build → Knowledge**, create the items below. Your project is **already connected** to the shared search service (connection `srch-<alias>`), so **Knowledge** opens straight on your knowledge bases; there is no Connect step.
 
+For an **Azure Blob Storage** knowledge source pick storage account `stfdeb35tric`, your container `docs-<alias>`, and Authentication type **System assigned identity** (not API Key). Leave the source's *chat completions model* empty; choose `gpt-5-mini` on the knowledge base itself.
+
 - a **knowledge source** with all files from `data/docs/` (name: `ks-<alias>-mfg-docs`)
 - a **knowledge base** `kb-<alias>-mfg` that uses it, with an LLM for query planning (your chat deployment) and retrieval reasoning effort **low**
 

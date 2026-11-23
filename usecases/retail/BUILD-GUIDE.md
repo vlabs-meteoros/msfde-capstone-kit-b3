@@ -30,6 +30,8 @@ Work out by hand: can C-10482 return her espresso machine today? Write down your
 ### Challenge 1.4 · Foundry IQ knowledge base with documents and approved web (45 min)
 In **Foundry portal → Build → Knowledge**, create the items below. Your project is **already connected** to the shared search service (connection `srch-<alias>`), so **Knowledge** opens straight on your knowledge bases; there is no Connect step.
 
+For an **Azure Blob Storage** knowledge source pick storage account `stfdeb35tric`, your container `docs-<alias>`, and Authentication type **System assigned identity** (not API Key). Leave the source's *chat completions model* empty; choose `gpt-5-mini` on the knowledge base itself.
+
 1. Knowledge source `ks-<alias>-rtl-docs` from `data/docs/`
 2. Two **approved web** sources:
    - **Web knowledge source** (Bing) restricted to the domains in `data/approved-web-domains.txt`, for live regulator content

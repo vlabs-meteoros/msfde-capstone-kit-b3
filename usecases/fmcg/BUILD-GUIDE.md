@@ -35,7 +35,7 @@ FY2026-27 is only partly complete. Comparing it with the whole of FY2025-26 woul
 </details>
 
 ### Challenge 1.4 · Foundry IQ knowledge base over trade terms and market reports (40 min)
-Your project is **already connected** to the shared search service (connection `srch-<alias>`), so **Knowledge** opens straight on your knowledge bases; there is no Connect step. In **Foundry portal → Build → Knowledge**, create knowledge source `ks-<alias>-fmcg-docs` from `data/docs/` and knowledge base `kb-<alias>-fmcg` (query planning on, reasoning effort **low**). Test: *"What growth rebate does MetroMart earn at 12 % growth?"*
+Your project is **already connected** to the shared search service (connection `srch-<alias>`), so **Knowledge** opens straight on your knowledge bases; there is no Connect step. In **Foundry portal → Build → Knowledge**, create knowledge source `ks-<alias>-fmcg-docs` from `data/docs/` and knowledge base `kb-<alias>-fmcg` (query planning on, reasoning effort **low**). For an **Azure Blob Storage** knowledge source pick storage account `stfdeb35tric`, your container `docs-<alias>`, and Authentication type **System assigned identity** (not API Key). Leave the source's *chat completions model* empty; choose `gpt-5-mini` on the knowledge base itself. Test: *"What growth rebate does MetroMart earn at 12 % growth?"*
 
 **Done when:** the answer cites TTA-MM-FY27 and says 2.0 % (the 8–15 % tier), applied to the whole FY net sell-in value.
 
