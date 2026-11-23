@@ -28,7 +28,8 @@ python -m common.semantic_layer usecases/retail/data/semantic/semantic_model.yam
 Work out by hand: can C-10482 return her espresso machine today? Write down your reasoning; it becomes a test for your agent.
 
 ### Challenge 1.4 · Foundry IQ knowledge base with documents and approved web (45 min)
-In **Foundry portal → Build → Knowledge**, create:
+In **Foundry portal → Build → Knowledge**, create the items below. Your project is **already connected** to the shared search service (connection `srch-<alias>`), so **Knowledge** opens straight on your knowledge bases; there is no Connect step.
+
 1. Knowledge source `ks-<alias>-rtl-docs` from `data/docs/`
 2. Two **approved web** sources:
    - **Web knowledge source** (Bing) restricted to the domains in `data/approved-web-domains.txt`, for live regulator content
@@ -38,6 +39,11 @@ In **Foundry portal → Build → Knowledge**, create:
 Test: *"What should a customer do if their Nimbus X2 purifier smells of burning?"*
 
 **Done when:** the answer cites the internal recall notice **and** the Nimbus web snapshot.
+
+<details><summary>Hint: Knowledge asks me to pick a Foundry IQ resource and Connect is greyed out</summary>
+
+You're in the wrong project, or your project's search connection is missing. Check the project name at the top left is `proj-<alias>`. If it is, ask your facilitator to re-run the project setup for your user; don't connect through someone else's project.
+</details>
 
 <details><summary>Hint: why curated snapshots are a strong design choice</summary>
 

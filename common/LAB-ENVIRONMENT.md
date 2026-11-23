@@ -16,6 +16,7 @@ You sign in as **fdeuserN@justlabs.online** (your facilitator gives you N). Ever
 | Azure AI Search (Foundry IQ) | `srch-fde-b3-5tric` (S2, East US): `https://srch-fde-b3-5tric.search.windows.net` |
 | Storage account | `stfdeb35tric`, container **`docs-fdeuserN`** for your documents |
 | Web knowledge source (Retail) | Enabled in this subscription |
+| Connections in your project | `srch-fdeuserN` (Foundry IQ, keyless) and `appi-fdeuserN` (Application Insights for traces), already created |
 
 ## Naming rule: shared services
 
@@ -37,22 +38,29 @@ The search service and storage account are shared by about 60 people. Prefix eve
 | Your project `proj-fdeuserN` | Foundry Project Manager (lets you create the knowledge-base connection) |
 | Search service | Search Service Contributor + Search Index Data Contributor |
 | Storage account | Storage Blob Data Contributor |
-| Your project's managed identity | Search Index Data Reader on the search service (so your agent can query your knowledge base) |
+| Your project's managed identity | Search Index Data Reader, Search Index Data Contributor and Search Service Contributor on the search service (the portal and your agent use it to work with your knowledge base) |
 
 ## First commands on the VM
 
-```bash
-az login            # sign in as fdeuserN@justlabs.online
+If you haven't yet, run the one-line bootstrap from your handout first: it installs the tools, clones the repo to
+`%USERPROFILE%\msfde-capstone-kit`, creates `.venv` and `.env`, and validates the kit. Then, in Windows PowerShell:
+
+```powershell
+cd $env:USERPROFILE\msfde-capstone-kit
+.\.venv\Scripts\activate
+notepad .env        # replace every N with your number, save
+az login --use-device-code   # sign in as fdeuserN@justlabs.online
 az account set --subscription e68da77e-d26f-4da2-92d5-d5b490dc0014
-copy .env.sample .env   # then replace every N with your number
-python tools/validate_kit.py
-python common/starter/agent_app.py doctor --usecase <manufacturing|retail|fmcg>
+python tools\validate_kit.py
+python common\starter\agent_app.py doctor --usecase <manufacturing|retail|fmcg>
 ```
+
+Every command in this kit runs **from the repo folder** with the virtual environment active.
 
 Upload your use case's documents to your container:
 
-```bash
-az storage blob upload-batch --account-name stfdeb35tric --auth-mode login -d docs-fdeuserN -s usecases/<usecase>/data/docs
+```powershell
+az storage blob upload-batch --account-name stfdeb35tric --auth-mode login -d docs-fdeuserN -s usecases\<usecase>\data\docs --destination-path <usecase>
 ```
 
 (Retail: also upload `data/web-snapshots` to folder `retail-web` for the snapshot knowledge source.)

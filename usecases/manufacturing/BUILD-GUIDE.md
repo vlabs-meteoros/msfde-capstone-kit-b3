@@ -46,7 +46,8 @@ python -m common.semantic_layer usecases/manufacturing/data/semantic/semantic_mo
 </details>
 
 ### Challenge 1.4 · Foundry IQ knowledge base over the quality documents (40 min)
-In the **Foundry portal (new Foundry) → Build → Knowledge**, connect the shared search service and create:
+In the **Foundry portal (new Foundry) → Build → Knowledge**, create the items below. Your project is **already connected** to the shared search service (connection `srch-<alias>`), so **Knowledge** opens straight on your knowledge bases; there is no Connect step.
+
 - a **knowledge source** with all files from `data/docs/` (name: `ks-<alias>-mfg-docs`)
 - a **knowledge base** `kb-<alias>-mfg` that uses it, with an LLM for query planning (your chat deployment) and retrieval reasoning effort **low**
 
@@ -59,6 +60,11 @@ Test it in the knowledge base's test pane: *"What is the minimum degassing time 
 - **Azure Blob**: upload the files to your container (`az storage blob upload-batch -d docs-<alias> -s usecases/manufacturing/data/docs --account-name <storage> --auth-mode login`) and point the source at it. Foundry IQ builds the indexer, chunking and embeddings for you.
 - **File** (direct upload) works too if no storage account was provided.
 - Either way, wait for indexing to finish (the source shows document counts) before testing.
+</details>
+
+<details><summary>Hint: Knowledge asks me to pick a Foundry IQ resource and Connect is greyed out</summary>
+
+You're in the wrong project, or your project's search connection is missing. Check the project name at the top left is `proj-<alias>`. If it is, ask your facilitator to re-run the project setup for your user; don't connect through someone else's project.
 </details>
 
 <details><summary>Hint: the test cites the superseded Rev C</summary>
